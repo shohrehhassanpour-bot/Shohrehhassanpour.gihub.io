@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دکتر شهره حسن‌پور | Dr. Shohreh Hassanpour</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: #f4f7fb;
+            color: #1e293b;
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2.5rem 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+        }
+
+        .lang-switcher {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid #d1d9e6;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1e293b;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: #e6f0fa;
+        }
+
+        .lang-btn.active {
+            background: #1a4a3a;
+            border-color: #1a4a3a;
+            color: #fff;
+        }
+
+        .profile-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2.5rem;
+            border-bottom: 3px solid #eef2f6;
+            padding-bottom: 2.2rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #1a4a3a, #2a7a5a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 300;
+            color: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 8px 18px rgba(26, 74, 58, 0.15);
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* fallback if image not found */
+        .avatar .no-image {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #fff;
+        }
+
+        .header-text h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0b1e33;
+        }
+
+        .header-text .title {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #1a4a3a;
+        }
+
+        .header-text .affiliation {
+            font-size: 1rem;
+            color: #475569;
+        }
+
+        .header-text .badge {
+            display: inline-block;
+            background: #e6f0fa;
+            color: #1a4a3a;
+            padding: 0.2rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0b1e33;
+            border-right: 5px solid #1a4a3a;
+            padding-right: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a4a3a;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #e9edf2;
+        }
+
+        .section ul li:last-child {
+            border-bottom: none;
+        }
+
+        .meta {
+            display: block;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .pub-item {
+            margin-bottom: 1.2rem;
+            padding: 0.8rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-right: 3px solid #1a4a3a;
+        }
+
+        .pub-item .pub-title {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .pub-item .pub-journal {
+            font-size: 0.9rem;
+            color: #1a4a3a;
+            font-style: italic;
+        }
+
+        .pub-item .pub-meta {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .contact-info {
+            background: #f1f5f9;
+            padding: 1.5rem 2rem;
+            border-radius: 20px;
+            margin-top: 1rem;
+        }
+
+        .contact-info p {
+            margin: 0.3rem 0;
+        }
+
+        .contact-info a {
+            color: #1a4a3a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #94a3b8;
+        }
+
+        .contact-info a:hover {
+            border-bottom: 2px solid #1a4a3a;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 2px solid #eef2f6;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .honor-badge {
+            display: inline-block;
+            background: #e6f0fa;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            margin: 0.2rem;
+            font-size: 0.9rem;
+        }
+
+        body.en {
+            direction: ltr;
+        }
+
+        body.en .section h2 {
+            border-right: none;
+            border-left: 5px solid #1a4a3a;
+            padding-right: 0;
+            padding-left: 1rem;
+        }
+
+        body.en .pub-item {
+            border-right: none;
+            border-left: 3px solid #1a4a3a;
+        }
+
+        @media (max-width: 750px) {
+            .container {
+                padding: 1.5rem;
+            }
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            .header-text h1 {
+                font-size: 1.8rem;
+            }
+            .lang-switcher {
+                justify-content: center;
+            }
+            .avatar {
+                width: 110px;
+                height: 110px;
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+            .contact-info {
+                padding: 1rem;
+            }
+            .pub-item {
+                padding: 0.5rem;
+            }
+        }
+
+        .lang-fa {
+            display: block;
+        }
+        .lang-en {
+            display: none;
+        }
+
+        body.en .lang-fa {
+            display: none;
+        }
+        body.en .lang-en {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ===== LANGUAGE SWITCHER ===== -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="fa">🇮🇷 فارسی</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        </div>
+
+        <!-- ===== HEADER ===== -->
+        <header class="profile-header">
+            <div class="avatar">
+                <!-- 
+                    ✅ عکس خود را با نام profile.jpg در کنار فایل index.html قرار دهید.
+                    اگر عکس وجود نداشت، حرف "ش" به عنوان جایگزین نمایش داده می‌شود.
+                -->
+                <img src="profile.jpg" alt="دکتر شهره حسن‌پور" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <span class="no-image" style="display:none; align-items:center; justify-content:center; width:100%; height:100%;">ش</span>
+            </div>
+            <div class="header-text">
+                <div class="lang-fa">
+                    <h1>دکتر شهره حسن‌پور</h1>
+                    <div class="title">دانشیار · گروه زمین‌شناسی</div>
+                    <div class="affiliation">دانشگاه پیام نور · دانشکده علوم پایه</div>
+                    <span class="badge">🏆 استاد نمونه کشوری ۱۴۰۱ · پژوهشگر برتر ۱۴۰۴</span>
+                </div>
+                <div class="lang-en">
+                    <h1>Dr. Shohreh Hassanpour</h1>
+                    <div class="title">Associate Professor · Department of Geology</div>
+                    <div class="affiliation">Payame Noor University · Faculty of Basic Sciences</div>
+                    <span class="badge">🏆 National Outstanding Professor 2022 · Top Researcher 2025</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ===== GRID ===== -->
+        <div class="grid-2col">
+
+            <!-- ===== RIGHT COLUMN ===== -->
+            <div>
+
+                <!-- درباره / About -->
+                <section class="section">
+                    <h2 class="lang-fa">درباره من</h2>
+                    <h2 class="lang-en">About Me</h2>
+
+                    <p class="lang-fa" style="text-align:justify;">
+                        من دکتر شهره حسن‌پور، دانشیار گروه زمین‌شناسی دانشگاه پیام نور هستم. 
+                        تخصص من در حوزه <strong>زمین‌شناسی اقتصادی، کانی‌سازی مس و طلا، و اکتشافات ژئوشیمیایی</strong> است. 
+                        بیش از ۳۰ سال تجربه در زمینه اکتشافات معدنی، همکاری با شرکت‌های بین‌المللی مانند ریوتینتو و سازمان زمین‌شناسی، 
+                        و نظارت بر پروژه‌های اکتشافی در سطح کشور داشته‌ام.
+                    </p>
+
+                    <p class="lang-en" style="text-align:justify;">
+                        I am Dr. Shohreh Hassanpour, Associate Professor in the Department of Geology at Payame Noor University. 
+                        My expertise lies in <strong>Economic Geology, Copper and Gold Mineralization, and Geochemical Exploration</strong>. 
+                        I have over 30 years of experience in mineral exploration, collaborating with international companies such as Rio Tinto 
+                        and the Geological Survey, and supervising exploration projects across Iran.
+                    </p>
+                </section>
+
+                <!-- دروس / Courses -->
+                <section class="section">
+                    <h2 class="lang-fa">دروس جاری</h2>
+                    <h2 class="lang-en">Current Courses</h2>
+
+                    <ul class="lang-fa">
+                        <li><strong>زمین‌شناسی اقتصادی</strong><span class="meta">کارشناسی ارشد · شنبه ۱۰–۱۲ · سالن ۲۰۴</span></li>
+                        <li><strong>اکتشافات ژئوشیمیایی</strong><span class="meta">کارشناسی ارشد · دوشنبه ۱۴–۱۶ · سالن ۳۰۵</span></li>
+                        <li><strong>کانسارهای مس و طلا</strong><span class="meta">دکتری · چهارشنبه ۸–۱۰ · اتاق جلسات</span></li>
+                    </ul>
+
+                    <ul class="lang-en">
+                        <li><strong>Economic Geology</strong><span class="meta">Graduate · Sun 10–12 · Room 204</span></li>
+                        <li><strong>Geochemical Exploration</strong><span class="meta">Graduate · Tue 14–16 · Room 305</span></li>
+                        <li><strong>Copper and Gold Deposits</strong><span class="meta">PhD · Wed 8–10 · Meeting Room</span></li>
+                    </ul>
+                </section>
+
+                <!-- ===== ARTICLES / مقالات ===== -->
+                <section class="section">
+                    <h2 class="lang-fa">مقالات علمی</h2>
+                    <h2 class="lang-en">Journal Articles</h2>
+
+                    <!-- مقاله ۱ -->
+                    <div class="pub-item">
+                        <div class="lang-fa">
+                            <div class="pub-title">[عنوان مقاله اول به فارسی]</div>
+                            <div class="pub-journal">[نام مجله به فارسی]</div>
+                            <div class="pub-meta">سال: [۱۴۰۰] · همکاران: [نام همکاران]</div>
+                        </div>
+                        <div class="lang-en">
+                            <div class="pub-title">[Paper Title 1 in English]</div>
+                            <div class="pub-journal">[Journal Name in English]</div>
+                            <div class="pub-meta">Year: [2021] · Co-authors: [Names]</div>
+                        </div>
+                    </div>
+
+                    <!-- مقاله ۲ -->
+                    <div class="pub-item">
+                        <div class="lang-fa">
+                            <div class="pub-title">[عنوان مقاله دوم به فارسی]</div>
+                            <div class="pub-journal">[نام مجله به فارسی]</div>
+                            <div class="pub-meta">سال: [۱۴۰۱] · همکاران: [نام همکاران]</div>
+                        </div>
+                        <div class="lang-en">
+                            <div class="pub-title">[Paper Title 2 in English]</div>
+                            <div class="pub-journal">[Journal Name in English]</div>
+                            <div class="pub-meta">Year: [2022] · Co-authors: [Names]</div>
+                        </div>
+                    </div>
+
+                    <!-- مقاله ۳ -->
+                    <div class="pub-item">
+                        <div class="lang-fa">
+                            <div class="pub-title">[عنوان مقاله سوم به فارسی]</div>
+                            <div class="pub-journal">[نام مجله به فارسی]</div>
+                            <div class="pub-meta">سال: [۱۴۰۲] · همکاران: [نام همکاران]</div>
+                        </div>
+                        <div class="lang-en">
+                            <div class="pub-title">[Paper Title 3 in English]</div>
+                            <div class="pub-journal">[Journal Name in English]</div>
+                            <div class="pub-meta">Year: [2023] · Co-authors: [Names]</div>
+                        </div>
+                    </div>
+
+                    <p style="margin-top:0.8rem; font-size:0.9rem;">
+                        <span class="lang-fa">🔗 <a href="#">مشاهده همه مقالات</a></span>
+                        <span class="lang-en">🔗 <a href="#">View All Publications</a></span>
+                    </p>
+                </section>
+
+                <!-- ===== CONFERENCES / کنفرانس‌ها ===== -->
+                <section class="section">
+                    <h2 class="lang-fa">کنفرانس‌ها و همایش‌ها</h2>
+                    <h2 class="lang-en">Conferences & Symposiums</h2>
+
+                    <!-- کنفرانس ۱ -->
+                    <div class="pub-item">
+                        <div class="lang-fa">
+                            <div class="pub-title">[عنوان ارائه به فارسی]</div>
+                            <div class="pub-journal">[نام کنفرانس به فارسی]</div>
+                            <div class="pub-meta">سال: [۱۴۰۰] · محل برگزاری: [شهر/کشور]</div>
+                        </div>
+                        <div class="lang-en">
+                            <div class="pub-title">[Presentation Title in English]</div>
+                            <div class="pub-journal">[Conference Name in English]</div>
+                            <div class="pub-meta">Year: [2021] · Location: [City/Country]</div>
+                        </div>
+                    </div>
+
+                    <!-- کنفرانس ۲ -->
+                    <div class="pub-item">
+                        <div class="lang-fa">
+                            <div class="pub-title">[عنوان ارائه به فارسی]</div>
+                            <div class="pub-journal">[نام کنفرانس به فارسی]</div>
+                            <div class="pub-meta">سال: [۱۴۰۱] · محل برگزاری: [شهر/کشور]</div>
+                        </div>
+                        <div class="lang-en">
+                            <div class="pub-title">[Presentation Title in English]</div>
+                            <div class="pub-journal">[Conference Name in English]</div>
+                            <div class="pub-meta">Year: [2022] · Location: [City/Country]</div>
+                        </div>
+                    </div>
+
+                    <!-- کنفرانس ۳ -->
+                    <div class="pub-item">
+                        <div class="lang-fa">
+                            <div class="pub-title">[عنوان ارائه به فارسی]</div>
+                            <div class="pub-journal">[نام کنفرانس به فارسی]</div>
+                            <div class="pub-meta">سال: [۱۴۰۲] · محل برگزاری: [شهر/کشور]</div>
+                        </div>
+                        <div class="lang-en">
+                            <div class="pub-title">[Presentation Title in English]</div>
+                            <div class="pub-journal">[Conference Name in English]</div>
+                            <div class="pub-meta">Year: [2023] · Location: [City/Country]</div>
+                        </div>
+                    </div>
+
+                    <p style="margin-top:0.8rem; font-size:0.9rem;">
+                        <span class="lang-fa">🔗 <a href="#">مشاهده همه کنفرانس‌ها</a></span>
+                        <span class="lang-en">🔗 <a href="#">View All Conferences</a></span>
+                    </p>
+                </section>
+            </div>
+
+            <!-- ===== LEFT COLUMN ===== -->
+            <div>
+
+                <!-- سوابق تحصیلی / Education -->
+                <section class="section">
+                    <h2 class="lang-fa">سوابق تحصیلی</h2>
+                    <h2 class="lang-en">Education</h2>
+
+                    <ul class="lang-fa">
+                        <li><strong>دکتری زمین‌شناسی اقتصادی</strong><span class="meta">دانشگاه شهید بهشتی · ۱۳۸۲–۱۳۸۹</span></li>
+                        <li><strong>کارشناسی ارشد زمین‌شناسی اقتصادی</strong><span class="meta">دانشگاه آزاد تهران شمال · ۱۳۷۶–۱۳۷۹</span></li>
+                        <li><strong>کارشناسی زمین‌شناسی</strong><span class="meta">دانشگاه تبریز · ۱۳۶۹–۱۳۷۳</span></li>
+                    </ul>
+
+                    <ul class="lang-en">
+                        <li><strong>PhD in Economic Geology</strong><span class="meta">Shahid Beheshti University · 2003–2010</span></li>
+                        <li><strong>MSc in Economic Geology</strong><span class="meta">Azad University, Tehran North · 1997–2000</span></li>
+                        <li><strong>BSc in Geology</strong><span class="meta">University of Tabriz · 1990–1994</span></li>
+                    </ul>
+                </section>
+
+                <!-- سوابق اجرایی / Executive Experience -->
+                <section class="section">
+                    <h2 class="lang-fa">سوابق اجرایی</h2>
+                    <h2 class="lang-en">Executive Experience</h2>
+
+                    <ul class="lang-fa">
+                        <li><strong>مدیر گروه علوم پایه</strong><span class="meta">استان البرز · ۱۳۹۲–۱۴۰۱</span></li>
+                        <li><strong>رئیس ارتباط با صنعت دانشگاه</strong><span class="meta">پیام نور · ۱۴۰۱–۱۴۰۲</span></li>
+                        <li><strong>مدیر گروه زمین‌شناسی</strong><span class="meta">مرکز کرج · ۱۳۹۰–تاکنون</span></li>
+                        <li><strong>عضو شورای تخصصی علوم پایه استان</strong><span class="meta">از ۱۳۹۲</span></li>
+                        <li><strong>عضو کمیته آزمایشگاه‌های استان</strong><span class="meta">از ۱۳۹۶</span></li>
+                    </ul>
+
+                    <ul class="lang-en">
+                        <li><strong>Head of Basic Sciences Department</strong><span class="meta">Alborz Province · 2013–2022</span></li>
+                        <li><strong>Director of Industry Relations</strong><span class="meta">Payame Noor University · 2022–2023</span></li>
+                        <li><strong>Head of Geology Department</strong><span class="meta">Karaj Center · 2011–Present</span></li>
+                        <li><strong>Member of Provincial Basic Sciences Council</strong><span class="meta">Since 2013</span></li>
+                        <li><strong>Member of Provincial Laboratories Committee</strong><span class="meta">Since 2017</span></li>
+                    </ul>
+                </section>
+
+                <!-- ===== WORKSHOPS / دوره‌ها و کارگاه‌ها ===== -->
+                <section class="section">
+                    <h2 class="lang-fa">دوره‌ها و کارگاه‌ها</h2>
+                    <h2 class="lang-en">Workshops & Training</h2>
+
+                    <ul class="lang-fa">
+                        <li><strong>RS و GIS مقدماتی</strong><span class="meta">مرکز سنجش از دور ایران · ۱۳۸۱</span></li>
+                        <li><strong>RS و GIS پیشرفته</strong><span class="meta">مرکز سنجش از دور ایران · ۱۳۸۲</span></li>
+                        <li><strong>سیستم‌های پورفیری</strong><span class="meta">کرمان · پروفسور سیلیتو · ۱۳۸۱</span></li>
+                        <li><strong>اکتشافات ژئوشیمیایی</strong><span class="meta">پل اگنیو · شرکت ریوتینتو · ۱۳۸۰</span></li>
+                        <li><strong>مدل‌سازی معادن</strong><span class="meta">وزارت صنعت، معدن و تجارت · ۱۳۹۱</span></li>
+                        <li><strong>دورسنجی از طریق تصاویر ماهواره‌ای</strong><span class="meta">وزارت صنعت، معدن و تجارت · ۱۳۹۱</span></li>
+                        <li><strong>کارگاه آموزش حفاری</strong><span class="meta">وزارت صنعت، معدن و تجارت · ۱۳۹۱</span></li>
+                    </ul>
+
+                    <ul class="lang-en">
+                        <li><strong>Introduction to RS & GIS</strong><span class="meta">Iran Remote Sensing Center · 2002</span></li>
+                        <li><strong>Advanced RS & GIS</strong><span class="meta">Iran Remote Sensing Center · 2003</span></li>
+                        <li><strong>Porphyry Systems</strong><span class="meta">Kerman · Prof. Sillitoe · 2002</span></li>
+                        <li><strong>Geochemical Exploration</strong><span class="meta">Paul Agnew · Rio Tinto · 2001</span></li>
+                        <li><strong>Mining Modeling</strong><span class="meta">Ministry of Industry, Mining & Trade · 2012</span></li>
+                        <li><strong>Satellite Remote Sensing</strong><span class="meta">Ministry of Industry, Mining & Trade · 2012</span></li>
+                        <li><strong>Drilling Training Workshop</strong><span class="meta">Ministry of Industry, Mining & Trade · 2012</span></li>
+                    </ul>
+
+                    <p style="margin-top:0.8rem; font-size:0.9rem;">
+                        <span class="lang-fa">📚 <a href="#">مشاهده همه دوره‌ها (۲۴ دوره)</a></span>
+                        <span class="lang-en">📚 <a href="#">View All Workshops (24)</a></span>
+                    </p>
+                </section>
+            </div>
+        </div>
+
+        <!-- ===== افتخارات / Honors ===== -->
+        <section class="section">
+            <h2 class="lang-fa">افتخارات و جوایز</h2>
+            <h2 class="lang-en">Honors & Awards</h2>
+
+            <div class="lang-fa" style="display:flex; flex-wrap:wrap; gap:0.5rem 1rem; margin-top:0.5rem;">
+                <span class="honor-badge">🏆 استاد نمونه کشوری ۱۴۰۱</span>
+                <span class="honor-badge">🏆 پژوهشگر برتر ۱۴۰۴</span>
+                <span class="honor-badge">🏆 استاد نمونه ارتباط با صنعت (وزارت علوم) ۱۴۰۲</span>
+                <span class="honor-badge">🏆 پژوهشگر نمونه ۱۳۹۱–۱۳۹۵</span>
+                <span class="honor-badge">🏆 استاد نمونه در سطح دانشگاه ۱۴۰۳</span>
+                <span class="honor-badge">🏆 پژوهشگر برتر دانشگاه ۱۴۰۴</span>
+            </div>
+
+            <div class="lang-en" style="display:flex; flex-wrap:wrap; gap:0.5rem 1rem; margin-top:0.5rem;">
+                <span class="honor-badge">🏆 National Outstanding Professor 2022</span>
+                <span class="honor-badge">🏆 Top Researcher 2025</span>
+                <span class="honor-badge">🏆 Industry-Academia Excellence Award 2023</span>
+                <span class="honor-badge">🏆 Outstanding Researcher 2012–2016</span>
+                <span class="honor-badge">🏆 University Outstanding Professor 2024</span>
+                <span class="honor-badge">🏆 University Top Researcher 2025</span>
+            </div>
+        </section>
+
+        <!-- ===== تماس / Contact ===== -->
+        <section class="section">
+            <h2 class="lang-fa">ارتباط با من</h2>
+            <h2 class="lang-en">Contact Me</h2>
+
+            <div class="contact-info">
+                <div class="lang-fa">
+                    <p>🌐 <strong>وب‌سایت:</strong> <a href="https://ShohrehHassanpour.com">ShohrehHassanpour.com</a></p>
+                    <p>📧 <strong>ایمیل:</strong> <a href="mailto:Hassanpour@pnu.ac.ir">Hassanpour@pnu.ac.ir</a> · <a href="mailto:Shohrehhassanpour@gmail.com">Shohrehhassanpour@gmail.com</a></p>
+                    <p>📍 <strong>آدرس:</strong> دانشگاه پیام نور، دانشکده علوم پایه، گروه زمین‌شناسی، کرج</p>
+                    <p>📞 <strong>تلفن:</strong> [درج نشده]</p>
+                </div>
+                <div class="lang-en">
+                    <p>🌐 <strong>Website:</strong> <a href="https://ShohrehHassanpour.com">ShohrehHassanpour.com</a></p>
+                    <p>📧 <strong>Email:</strong> <a href="mailto:Hassanpour@pnu.ac.ir">Hassanpour@pnu.ac.ir</a> · <a href="mailto:Shohrehhassanpour@gmail.com">Shohrehhassanpour@gmail.com</a></p>
+                    <p>📍 <strong>Address:</strong> Payame Noor University, Faculty of Basic Sciences, Geology Department, Karaj, Iran</p>
+                    <p>📞 <strong>Phone:</strong> [Not provided]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <span class="lang-fa">© ۱۴۰۵ · دکتر شهره حسن‌پور · تمامی حقوق محفوظ است.</span>
+            <span class="lang-en">© 2026 · Dr. Shohreh Hassanpour · All Rights Reserved.</span>
+        </footer>
+
+    </div>
+
+    <!-- ===== SCRIPT ===== -->
+    <script>
+        const buttons = document.querySelectorAll('.lang-btn');
+        const body = document.body;
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                buttons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const lang = this.getAttribute('data-lang');
+                if (lang === 'en') {
+                    body.classList.add('en');
+                    document.documentElement.lang = 'en';
+                    document.documentElement.dir = 'ltr';
+                } else {
+                    body.classList.remove('en');
+                    document.documentElement.lang = 'fa';
+                    document.documentElement.dir = 'rtl';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
